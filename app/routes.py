@@ -49,7 +49,7 @@ def liked_posts_route():
         return jsonify(likes_df.to_dict(orient='records')), 200
     except FileNotFoundError:
         logging.warning("No liked posts found.")
-        return jsonify({"message": "No liked posts found."}), 404
+        return jsonify({"message": "No liked posts found"}), 404
 
 @main_routes.route('/commented_posts', methods=['GET'])
 def commented_posts_route():
